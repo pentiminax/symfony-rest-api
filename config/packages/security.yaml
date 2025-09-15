@@ -11,14 +11,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            custom_authenticators:
-                - App\Security\ApiKeyAuthenticator
             lazy: true
             provider: app_user_provider
             stateless: true
 
     access_control:
-        - { path: ^/api, roles: ROLE_USER }
+        - { path: ^/api, roles: PUBLIC_ACCESS }
 
 when@test:
     security:
