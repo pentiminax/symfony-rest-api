@@ -28,7 +28,7 @@ class ApiKeyAuthenticator extends AbstractAuthenticator
         }
 
         return new SelfValidatingPassport(
-            new UserBadge($apiKey, fn() => new User()->setUsername('API-USER'))
+            new UserBadge($apiKey, fn() => (new User())->setUsername('API-USER'))
         );
     }
 
