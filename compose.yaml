@@ -1,0 +1,20 @@
+services:
+###> doctrine/doctrine-bundle ###
+  database:
+    container_name: cocktail_database
+    image: mysql:9.4
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - database_data:/var/lib/mysql:rw
+###< doctrine/doctrine-bundle ###
+
+volumes:
+###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###
